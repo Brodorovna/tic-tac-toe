@@ -1,0 +1,52 @@
+/** @format */
+
+.container {
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-gap: 5px;
+}
+
+.container a {
+  border: 1px solid black;
+  text-align: center;
+  font-size: 50px;
+  text-decoration: none;
+  color: rgb(56, 56, 56);
+}
+
+h4 {
+  position: absolute;
+  top: 200px;
+  left: 25%;
+  right: 25%;
+  margin: 0 auto;
+  width: 400px;
+  background-color: rgba(255, 0, 0, 0.411);
+  color: white;
+  font-size: large;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* * @format
+
+.container {
+  margin: auto;
+  width: 600px;
+  height: 800px;
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+  grid-gap: 5px;
+}
+
+.container .cell button {
+  border: 1px solid black;
+  text-align: center;
+  font-size: 50px;
+  text-decoration: none;
+  color: rgb(56, 56, 56);
+  padding: 50px;
+} */
