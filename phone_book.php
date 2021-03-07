@@ -48,9 +48,6 @@ if (array_key_exists("save", $_GET)) {
     file_put_contents('phone.json', json_encode($all_numbers, JSON_PRETTY_PRINT));
 }
 
-// if (array_key_exists('0', $all_numbers)) {
-//     print_r($all_numbers);
-// }
 ?>
 
 <pre>
