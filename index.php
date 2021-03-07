@@ -57,85 +57,42 @@ $row2 = $table[2];
 
 ////////////////row
 switch (true) {
-    case ($row[0] == "x" && $row[1] == "x" && $row[2] == "x"):
+    case ($row[0] == "x" && $row[1] == "x" && $row[2] == "x" ||
+        $row1[0] == "x" && $row1[1] == "x" && $row1[2] == "x" ||
+        $row2[0] == "x" && $row2[1] == "x" && $row2[2] == "x"):
         echo "x won <br>";
         break;
-    case ($row[0] == "O" && $row[1] == "O" && $row[2] == "O"):
+    case ($row[0] == "O" && $row[1] == "O" && $row[2] == "O" ||
+        $row1[0] == "O" && $row1[1] == "O" && $row1[2] == "O" ||
+        $row2[0] == "O" && $row2[1] == "O" && $row2[2] == "O"):
         echo "O won <br>";
         break;
 }
 
-switch (true) {
-    case ($row1[0] == "x" && $row1[1] == "x" && $row1[2] == "x"):
-        echo "x won <br>";
-        break;
-    case ($row1[0] == "O" && $row1[1] == "O" && $row1[2] == "O"):
-        echo "O won <br>";
-        break;
-}
-
-switch (true) {
-    case ($row2[0] == "x" && $row2[1] == "x" && $row2[2] == "x"):
-        echo "x won <br>";
-        break;
-    case ($row2[0] == "O" && $row2[1] == "O" && $row2[2] == "O"):
-        echo "O won <br>";
-        break;
-}
 
 //////////////////col
 switch (true) {
-    case ($table[0][0] == "x" && $table[1][0] == "x" && $table[2][0] == "x"):
+    case ($table[0][0] == "x" && $table[1][0] == "x" && $table[2][0] == "x" ||
+        $table[0][1] == "x" && $table[1][1] == "x" && $table[2][1] == "x" ||
+        $table[0][2] == "x" && $table[1][2] == "x" && $table[2][2] == "x"):
         echo "x won <br>";
         break;
-    case ($table[0][0] == "O" && $table[1][0] == "O" && $table[2][0] == "O"):
+    case ($table[0][0] == "O" && $table[1][0] == "O" && $table[2][0] == "O" ||
+        $table[0][1] == "O" && $table[1][1] == "O" && $table[2][1] == "O" ||
+        $table[0][2] == "O" && $table[1][2] == "O" && $table[2][2] == "O"):
         echo "O won <br>";
         break;
 }
 
-switch (true) {
-    case ($table[0][1] == "x" && $table[1][1] == "x" && $table[2][1] == "x"):
-        echo "x won <br>";
-        break;
-    case ($table[0][1] == "O" && $table[1][1] == "O" && $table[2][1] == "O"):
-        echo "O won <br>";
-        break;
-}
-
-
-switch (true) {
-    case ($table[0][2] == "x" && $table[1][2] == "x" && $table[2][2] == "x"):
-        echo "x won <br>";
-        break;
-    case ($table[0][2] == "O" && $table[1][2] == "O" && $table[2][2] == "O"):
-        echo "O won <br>";
-        break;
-}
 
 /////////////cross
 switch (true) {
-    case ($table[0][0] == "x" && $table[1][1] == "x" && $table[2][2] == "x"):
+    case ($table[0][0] == "x" && $table[1][1] == "x" && $table[2][2] == "x" ||
+        $table[0][2] == "x" && $table[1][1] == "x" && $table[2][0] == "x"):
         echo "x won <br>";
         break;
-    case ($table[0][0] == "O" && $table[1][1] == "O" && $table[2][2] == "O"):
-        echo "O won <br>";
-        break;
-}
-
-switch (true) {
-    case ($table[0][0] == "x" && $table[1][1] == "x" && $table[2][2] == "x"):
-        echo "x won <br>";
-        break;
-    case ($table[0][0] == "O" && $table[1][1] == "O" && $table[2][2] == "O"):
-        echo "O won <br>";
-        break;
-}
-
-switch (true) {
-    case ($table[0][2] == "x" && $table[1][1] == "x" && $table[2][0] == "x"):
-        echo "x won <br>";
-        break;
-    case ($table[0][2] == "O" && $table[1][1] == "O" && $table[2][0] == "O"):
+    case ($table[0][0] == "O" && $table[1][1] == "O" && $table[2][2] == "O" ||
+        $table[0][2] == "O" && $table[1][1] == "O" && $table[2][0] == "O"):
         echo "O won <br>";
         break;
 }
