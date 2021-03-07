@@ -11,12 +11,11 @@ if (array_key_exists('number', $_GET)) {
     $result = $result . $_GET['number'];
 }
 
-
 // Импорт и декодирование json-a. 
-$number_line = $number_line . json_decode(file_get_contents('phone.json'), true);
-$phone_book = ["Number line:" => $number_line];
-if (!is_array($phone_book)) {
-    $phone_book = [];
+// большой массив, который должен содержать в себе маленькие массивы
+$all_numbers = json_decode(file_get_contents('phone.json'), true);
+if (!is_array($all_numbers)) {
+    $all_numbers = [];
 }
 ?>
 
@@ -33,19 +32,27 @@ if (!is_array($phone_book)) {
     <h2>Dial: <span id="output"><?= $result; ?></span></h2>
     <input type="hidden" name="next" value="phone_book.php?">
     <input name="Name">
-    <button type="submit">Save</button>
-    <!-- <a href="?save&result=<?= $result ?>">Save</a> -->
-</form>
+    <button type="submit" name="Save">Save</button>
 
+</form>
 
 
 <a href="?"><strong>Clear</strong></a><br>
 
-
 <?php
-
-
-for ($i = 0; $i < count($phone_book); $i++) {
-    echo "<p>" . $phone_book[$i] . "</p>";
+if (array_key_exists("save", $_GET)) {
+    $phone = $_GET['phone'];
+    $name = $_GET['name'];
+    $number = ['number' => $phone, 'name' => $name];
+    $all_numbers[] = $number;
+    file_put_contents('phone.json', json_encode($all_numbers, JSON_PRETTY_PRINT));
 }
+
+// if (array_key_exists('0', $all_numbers)) {
+//     print_r($all_numbers);
+// }
 ?>
+
+<pre>
+<? print_r($all_numbers) ?>
+</pre>
