@@ -2,7 +2,7 @@
 
 function getEntries()
 {
-    $entries = json_decode(file_get_contents('four_line.json'), true);
+    $entries = json_decode(file_get_contents('tictactoe_db.json'), true);
 
     if (!is_array($entries)) {
         $entries = [];
@@ -24,11 +24,11 @@ function &getTable(&$entries)
 function saveEntries($entries)
 {
     // Массив $entries шифруется и отправляется в json с применением эстетичного форматирования. 
-    file_put_contents('four_line.json', json_encode($entries, JSON_PRETTY_PRINT));
+    file_put_contents('tictactoe_db.json', json_encode($entries, JSON_PRETTY_PRINT));
 }
 
 
 function resetEntries()
 {
-    file_put_contents('four_line.json', json_encode('', true));
+    file_put_contents('tictactoe_db.json', json_encode('', true));
 }
